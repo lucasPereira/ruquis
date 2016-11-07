@@ -3,8 +3,9 @@
 import re
 import sys
 
-message = sys.argv[0]
-pattern = re.compile('^([A-Z]+) (#[0-9]+) - ([A-Z][a-zA-Z ]+)$')
+messageFile = sys.argv[1]
+message = open(messageFile, 'r').read()
+pattern = re.compile('^([A-Z]+) (#[0-9]+) - ([A-Z][a-zA-Z ]+)\n')
 test = pattern.match(message)
 
 if test == None:
